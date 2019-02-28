@@ -5,14 +5,19 @@ var data = {
 /*
  * GET tasks page.
  */
-exports.adminView = function(req, res){
-  res.render('rsvp', data);
+exports.adminView = function(request, response){
+  response.render('rsvp', data);
 };
 
-exports.addRSVP = function(req, res) {
+exports.addRSVP = function (request, response) {
+var rsvpEmail = request.body.rsvpEmail;
+  // This will print to your terminal whenever the POST request is made
   console.log(rsvpEmail);
-  
+
   data.rsvp.push(rsvpEmail);
 
-  res.send(rsvpEmail);
-};
+  // Let us send back some data so that
+  // browser knows it worked!
+  response.send(rsvpEmail);
+
+}
