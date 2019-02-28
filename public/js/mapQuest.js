@@ -8,6 +8,6 @@ function initMap() {
         zoomControl: false
     });
 
-    
+
     L.marker([32.88, -117.236]).addTo(map);
 }
